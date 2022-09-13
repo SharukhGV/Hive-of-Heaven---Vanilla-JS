@@ -27,8 +27,8 @@ console.log(cityMAIN)
 fetch(cityMAIN)
 .then((response) => response.json()).then((data) => {
 
-let latitude = data.boundingbox[0]
-let longitude = data.boundingbox[2]
+let latitude = data[0].boundingbox[0]
+let longitude = data[0].boundingbox[2]
 
 coordinates.push({lat: latitude, lng: longitude})
 

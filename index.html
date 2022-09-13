@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module" src="./index.js"></script>
+<style>
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }</style>
+
+  </head>
+  <body>
+
+    <div class="wrapper">
+        <div class="box item1">      
+            <!--The div element for the map -->
+            <div id="map"></div>
+       <h3> Hive of Heaven - A Night Sky Companion</h3>
+            <!-- 
+             The `defer` attribute causes the callback to execute after the full HTML
+             document has been parsed. For non-blocking uses, avoiding race conditions,
+             and consistent behavior across browsers, consider loading using Promises
+             with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+            --></div>
+        <div class="box item2"></div>
+        <div class="box item3"> 
+            <form id="form">
+            <label for="site-search">Search the site:</label>
+            <input type="text" id="site-search" name="q">
+                        <input type="submit">Search</input></div>
+
+            </form>
+        <div class="box item4">Four</div>
+        <div class="box item5">Five</div>
+    </div>
+
+
+
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT_lgpA5W_EvnRPY_Yvf_F3pGuM8hMf7o&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script defer src="index.js"></script>
+  </body>
+</html>

@@ -22,6 +22,7 @@ let geoapiid = "pk.3b76d3390feef27f7d252b1dc6788c2c"
   let cityMAIN = `${city1}${city2}${city3}`
 
 console.log(cityMAIN)
+console.log("___________________________________")
 
 
 fetch(cityMAIN)
@@ -96,6 +97,8 @@ else{
 
   window.initMap = initMap;
 
+
+  console.log("https://visible-planets-api.herokuapp.com/v2?latitude=32&longitude=-98")
   //VISIBLE PLANETS API
 //https://github.com/csymlstd/visible-planets-api  --> github link
   fetch("https://visible-planets-api.herokuapp.com/v2?latitude=32&longitude=-98")
@@ -114,11 +117,13 @@ else{
 let apiid = "a6e46b7a3f90a5e45660927441f74edf"
 let latty = (coordinates[coordinates.length-1]).lat
 let longy = (coordinates[coordinates.length-1]).lng
-
+ 
+let appidOPENWEATHER = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${apiid}`
+console.log(appidOPENWEATHER)
 
 // fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latty}&lon=${longy}&exclude={part}&appid={${apiid}}`)
 
-  fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${apiid}`)
+  fetch(appidOPENWEATHER)
   .then((response) => response.json()).then((data) => {
 
 }).catch((error) => {

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Add Map</title>
@@ -21,7 +22,7 @@
             <!--The div element for the map -->
             <div id="map"></div>
        <h3> Hive of Heaven - A Night Sky Companion</h3>
-            <!-- 
+            <!-- FROM GOOGLE API:
              The `defer` attribute causes the callback to execute after the full HTML
              document has been parsed. For non-blocking uses, avoiding race conditions,
              and consistent behavior across browsers, consider loading using Promises
@@ -30,9 +31,11 @@
         <div class="box item2"></div>
         <div class="box item3"> 
             <form id="form">
-            <label for="site-search">Search the site:</label>
+              <p><strong>Enter Full Address</strong></p>
+              <p>(Street,City,State,Zip Code)</p>
+            <label for="site-search"></label>
             <input type="text" id="site-search" name="q">
-                        <input type="submit">Search</input></div>
+                        <input type="submit"  id="button"></input></div>
 
             </form>
         <div class="box item4">Four</div>
@@ -47,5 +50,9 @@
       defer
     ></script>
     <script defer src="index.js"></script>
+
+ 
+
   </body>
 </html>
+

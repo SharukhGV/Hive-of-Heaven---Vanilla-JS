@@ -54,3 +54,13 @@
     width: 100%;
     /* The width is the width of the web page */
   }
+
+  #address{
+    font-size: 9pt;
+  }
+
+  #form{
+    width: auto;
+    background-color: black;
+    padding: 10px;
+  }

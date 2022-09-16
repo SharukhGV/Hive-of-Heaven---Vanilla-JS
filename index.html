@@ -48,14 +48,44 @@
 
         </div>
         <div class="box item3"> 
+          <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              width: auto;
+              background-color: #f1f1f1;
+            }
+            
+            li a {
+              display: block;
+              color: #000;
+              padding: 8px 16px;
+              text-decoration: none;
+            }
+            
+            /* Change the link color on hover */
+            li a:hover {
+              background-color: rgba(78, 240, 116, 0.528);
+              color: rgb(0, 0, 0);
+            }
+            </style>
+                      
+            <ul>
+              <li><a href="#home">Home PAGE</a></li>
+              <li><a href="#news">Celestial PAGE</a></li>
+            </ul>
+            <br></br>
             <form id="form">
               <p><strong>Enter Full Address</strong></p>
-              <p>(Street,City,State,Zip Code)</p>
+              <p id="address">(Street,City,State,Zip Code)</p>
             <label for="site-search"></label>
             <input type="text" id="site-search" name="q">
-                        <input type="submit"  id="button"></input></div>
+                        <input type="submit"  id="button"></input>
 
             </form>
+          
+          </div>
         <div class="box item4">Four</div>
         <div class="box item5">Five</div>
     </div>

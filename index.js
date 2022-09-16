@@ -1,3 +1,7 @@
+
+
+
+
 let coordinatesArrayLAT =[40]
 let coordinatesArrayLON =[-73]
 //DECLARING THE GOOGLE MAPS MAP VARIABLE

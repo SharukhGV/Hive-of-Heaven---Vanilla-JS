@@ -1,3 +1,5 @@
+let coordinatesArrayLAT =[40]
+let coordinatesArrayLON =[-73]
 //DECLARING THE GOOGLE MAPS MAP VARIABLE
 var map;
 //**********************************************************************************************************
@@ -39,7 +41,9 @@ function geocodeME(event){
   //THE DATA FETCHED WILL RENDER FORWARD GEOCODED ADDRESS , WHICH MEANS IT WILL TAKE THE STREET INPUTTED FROM THE SEARCH BAR AND CONVERT IT TO LATITUDE AND LONGITUDE COORDINATES
   var latitude = Number(data[0].lat);
   var longitude = Number(data[0].lon);
-
+  //the code below pushes values into array for alter access by other APIs
+  coordinatesArrayLAT.push(latitude);
+  coordinatesArrayLON.push(longitude)
 //THE CODE BELOW TAKES THE RENDERED LATITUDE & LONGITUDE AND SAVES IT TO A VARIABLE
 let homelocal = { lat: latitude, lng: longitude }
 //THE CODE BELOW MAKES A NEW MARKER EVERY TIME THE BUTTON IS CLICKED WITH A VALID ADDRESS INPUTTED
@@ -57,6 +61,21 @@ let homelocal = { lat: latitude, lng: longitude }
       
       console.log(error)
     }) 
+
+   console.log(coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0))
+
+//PLANET API CALL
+// fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0)}&longitude=${coordinatesArrayLON[.length-1].toFixed(0)}`)
+// .then((response) => response.json()).then((data) => {
+
+//   console.log(data)
+
+
+// }).catch((error) => {
+  
+//   console.log(error)
+// }) 
+    
   }
 
   
@@ -103,7 +122,19 @@ map = new google.maps.Map(googleMAPS, {
 
 //**********************************************************************************************************
 //********************************************************************************************************** */
-
+//PLANT APIS
+// function planetsRENDER(){
+//   fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0)}&longitude=${coordinatesArrayLON[.length-1].toFixed(0)}`)
+//   .then((response) => response.json()).then((data) => {
+  
+//     console.log(data)
+  
+  
+//   }).catch((error) => {
+    
+//     console.log(error)
+//   }) 
+//   }
 
 
 
@@ -132,17 +163,7 @@ map = new google.maps.Map(googleMAPS, {
 //**********************************************************************************************************
 //********************************************************************************************************** */
 // //**********************************************************************************************************
-//PLANT APIS
-//   fetch("https://visible-planets-api.herokuapp.com/v2?latitude=32&longitude=-98")
-//   .then((response) => response.json()).then((data) => {
 
-//     // console.log(data)
-
-
-// }).catch((error) => {
-    
-//     console.log(error)
-//   }) 
 //**********************************************************************************************************
 //WEATHER AND MOON API
 // let apiid = "a6e46b7a3f90a5e45660927441f74edf"

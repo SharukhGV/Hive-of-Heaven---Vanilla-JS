@@ -62,7 +62,7 @@ planets.innerHTML = `<div class="insertPlanetINFO"><br>LOCATION</br>  <br> <h3> 
     let plonets = document.querySelector(".planetclass")
     console.log(plonets)
 
-
+    plonets.innerHTML=""
 for (i=0;i<data1.data.length;i++){
 
   console.log(data1.data[i].name)

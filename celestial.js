@@ -43,7 +43,7 @@ function celestialME(event){
 
     event.preventDefault()
 
-return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0)}&longitude=${coordinatesArrayLON[coordinatesArrayLON.length-1].toFixed(0)}`)
+return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${latitude.toFixed(0)}&longitude=${longitude.toFixed(0)}`)
   .then((response) => response.json()).then((data1) => {
 //   console.log(data.data[0].name)
 //   console.log(data.data[0].aboveHorizon)
@@ -57,20 +57,17 @@ return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinat
 //     }
 // }
 // Object.values(data1.data[0]).aboveHorizon
-
-for (planet in (data1.data[0])[1]){
-    console.log(planet)
+for (i=0;i<data1.data.length;i++){
+    let divPlanet = document.createElement("div")
+    divPlanet.innerHTML =`<br>${data1.data[i].name}</br>`
+    planetrender.append(divPlanet)
 }
 
-
-
-
-if (Object.values(data1.data[0])[1]===true){
-   console.log(Object.values(data1.data[0])[0])
-     let divPlanet = document.createElement("div")
-    divPlanet.innerHTML =  Object.values(data1.data[0])[0]
-     planetrender.append(divPlanet)
-}
+//      let divPlanet = document.createElement("div")
+//     divPlanet.innerHTML =  `<p>${data1[0].name}</p>
+//     <p>${}</p>`
+//      planetrender.append(divPlanet)
+// }
 
     
 

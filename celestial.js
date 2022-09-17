@@ -59,15 +59,43 @@ return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${latitude.
 // Object.values(data1.data[0]).aboveHorizon
 let planets = document.querySelector(".planetrender")
 planets.innerHTML = `<div class="insertPlanetINFO"><br>LOCATION</br>  <br> <h3> ${x}</h3> </br> <br>PLANETS VIEWABLE</br><div>`
-for (i=0;i<data1.data.length;i++){
-  
-document.querySelector
-    let divPlanet = document.createElement("div")
-    divPlanet.innerHTML =`<br>${data1.data[i].name}</br>`
-    planetrender.append(divPlanet)
+    let plonets = document.querySelector(".planetclass")
+    console.log(plonets)
 
+
+for (i=0;i<data1.data.length;i++){
+
+  console.log(data1.data[i].name)
+  if(data1.data[i].name ==="Mercury"){
+    plonets.innerHTML += `<br><img src= "mercury.png"></br>`
+  }
+  if(data1.data[i].name ==="Venus"){
+    plonets.innerHTML += `<br><img src= "venus.png"</br>`
+  }
+  if(data1.data[i].name ==="Mars"){
+    plonets.innerHTML += `<br><img src= "mars.png"></br>`
+  }
+  if(data1.data[i].name ==="Jupiter"){
+    plonets.innerHTML += `<br><img src= "jupiter.png"></br>`
+  }
+  if(data1.data[i].name ==="Saturn"){
+    plonets.innerHTML += `<br><img src= "saturn.png"></br>`
+  }
+  if(data1.data[i].name ==="Uranus"){
+    plonets.innerHTML += `<br><img src= "uranus.png"></br>`
+  }
+  if(data1.data[i].name ==="Neptune"){
+    plonets.innerHTML += `<br><img src= "neptune.png"></br>`
+  }
+// document.querySelector
+//     let divPlanet = document.createElement("div")
+//     divPlanet.innerHTML =`<br>${data1.data[i].name}</br>`
+//     planetrender.append(divPlanet)
+
+    
 
 }
+
 // if(data1.data[i].name.includes("mercury")){
 //    let mercury= document.createElement("br")
 //    mercury.setAttribute("class","mercury")
@@ -216,3 +244,32 @@ result.catch((error) => {
 // });
 
 //   window.initMap = initMap;
+
+// // Set the date we're counting down to
+// var countDownDate = new Date("Aug 11, 2023 15:37:25").getTime();
+
+// // Update the count down every 1 second
+// var x = setInterval(function() {
+
+//   // Get today's date and time
+//   var now = new Date().getTime();
+    
+//   // Find the distance between now and the count down date
+//   var distance = countDownDate - now;
+    
+//   // Time calculations for days, hours, minutes and seconds
+//   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+//   // Output the result in an element with id="demo"
+//   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+//   + minutes + "m " + seconds + "s ";
+    
+//   // If the count down is over, write some text 
+//   if (distance < 0) {
+//     clearInterval(x);
+//     document.getElementById("demo").innerHTML = "EXPIRED";
+//   }
+// }, 1000);

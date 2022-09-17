@@ -1,27 +1,18 @@
 
 
 
+let planetrender = document.querySelector("div.planetrender")
 
 let coordinatesArrayLAT =[40]
 let coordinatesArrayLON =[-73]
 //DECLARING THE GOOGLE MAPS MAP VARIABLE
-var map;
-//**********************************************************************************************************
-//THE LINE OF CODE BELOW WILL SELECT THE DIV THAT HAS AN ID OF MAP IN THE HTML DOCUMENT AND RENDER THE GOOGLE MAPS UPON PAGELOAD
-let googleMAPS = document.getElementById("map");
 
-//**********************************************************************************************************
-//DARK SKY RESERVE COORDINATES THAT WILL BE RENDERED ON MAP UPON PAGE LOAD
-//**********************************************************************************************************
-var cherry = { lat: 41.66322605092642, lng: -77.82340454232315 };
-var sandDunes = { lat: 37.7940008252381, lng: -105.59327612114384 };
-var bigbend = { lat: 29.281262599614543, lng: -103.25034877571737 };
  //---------------------------------------->THIS ONE
 //**********************************************************************************************************
 
 //DDING THIS LINE OF COMMENTED CODE TO TEST GIT PUSH
 //FROM THE SEARCH BAR, WHEN A USER CLICKS 
-function geocodeME(event){
+function celestialME(event){
 
   event.preventDefault()
 
@@ -49,28 +40,46 @@ function geocodeME(event){
   coordinatesArrayLAT.push(latitude);
   coordinatesArrayLON.push(longitude)
 //THE CODE BELOW TAKES THE RENDERED LATITUDE & LONGITUDE AND SAVES IT TO A VARIABLE
-let homelocal = { lat: latitude, lng: longitude }
-//THE CODE BELOW MAKES A NEW MARKER EVERY TIME THE BUTTON IS CLICKED WITH A VALID ADDRESS INPUTTED
-    let marker0 = new google.maps.Marker({
-      position: homelocal,
-      icon: {                             
-        url: "telescopeicon.png"
-      }
-    })
-    marker0.setMap(map);
 
     event.preventDefault()
 
-// return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0)}&longitude=${coordinatesArrayLON[.length-1].toFixed(0)}`)
-//   .then((response) => response.json()).then((data) => {
-  
-//     console.log(data)
-  
-  
-//   }).catch((error) => {
+return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0)}&longitude=${coordinatesArrayLON[coordinatesArrayLON.length-1].toFixed(0)}`)
+  .then((response) => response.json()).then((data1) => {
+//   console.log(data.data[0].name)
+//   console.log(data.data[0].aboveHorizon)
+
+//     if(data.data[0].name ==="mercury"){
+//         if(data.data[0].aboveHorizon ===true){
+//             let mercury = document.createElement("div");
+//             mercury.innerHTML = "<p>Mercury</p>"
+//             planetrender.after(mercury)
+
+//     }
+// }
+// Object.values(data1.data[0]).aboveHorizon
+
+for (planet in (data1.data[0])[1]){
+    console.log(planet)
+}
+
+
+
+
+if (Object.values(data1.data[0])[1]===true){
+   console.log(Object.values(data1.data[0])[0])
+     let divPlanet = document.createElement("div")
+    divPlanet.innerHTML =  Object.values(data1.data[0])[0]
+     planetrender.append(divPlanet)
+}
+
     
-//     console.log(error)
-//   }) 
+
+  
+  
+  }).catch((error) => {
+    
+    console.log(error)
+  }) 
 
 
 })
@@ -106,28 +115,6 @@ result.catch((error) => {
 //**********************************************************************************************************
 //**********************************************************************************************************
 
-//Google MAp initialized at startup that will contain markers of the Dark Sky preserves
-function initMap() {
-map = new google.maps.Map(googleMAPS, {
-  zoom: 4,
-  center: cherry})
-
-    const marker = new google.maps.Marker({
-      position: bigbend,
-      map: map,
-    });
-
-    const marker2 = new google.maps.Marker({
-      position: cherry,
-      map: map,
-    });
-
-    const marker3 = new google.maps.Marker({
-      position: sandDunes,
-      map: map,
-    });
-
-}
 //**********************************************************************************************************
 //**********************************************************************************************************
 //**********************************************************************************************************
@@ -142,18 +129,6 @@ map = new google.maps.Map(googleMAPS, {
 //**********************************************************************************************************
 //********************************************************************************************************** */
 //PLANT APIS
-// function planetsRENDER(){
-//   fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0)}&longitude=${coordinatesArrayLON[.length-1].toFixed(0)}`)
-//   .then((response) => response.json()).then((data) => {
-  
-//     console.log(data)
-  
-  
-//   }).catch((error) => {
-    
-//     console.log(error)
-//   }) 
-//   }
 
 
 
@@ -161,7 +136,7 @@ map = new google.maps.Map(googleMAPS, {
 //THIS CODE WILL SELECT THE BUTTON IN THE HTML DOCUMENT
   let button = document.querySelector("#button");
   // THIS CODE WILL "LISTEN" FOR THE BUTTON CLICK TO RUN THE FUNCTION "GEOCODEME"
-  button.addEventListener("click",geocodeME);
+  button.addEventListener("click",celestialME);
   // button.addEventListener("click",planetCAll);
 
 
@@ -232,4 +207,4 @@ map = new google.maps.Map(googleMAPS, {
 //     title:"Hello World!"
 // });
 
-  window.initMap = initMap;
+//   window.initMap = initMap;

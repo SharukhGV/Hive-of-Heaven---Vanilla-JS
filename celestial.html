@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
+<body style="background-color: black;" class="box item2">
+
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+
     <div class="wrapper">
         <div class="box item1">      
             <!--The div element for the map -->
@@ -21,9 +29,9 @@
              and consistent behavior across browsers, consider loading using Promises
              with https://www.npmjs.com/package/@googlemaps/js-api-loader.
             --></div>
-        <div class="box item2">
+        <div>
 
-
+<div class="planetrender"></div>
 
 
         </div>
@@ -55,11 +63,23 @@
               <li><a href="index.html">Home PAGE</a></li>
               <li><a href="celestial.html">Celestial PAGE</a></li>
             </ul>
-          
+            <br></br>
+            <!-- SEARCH BAR -->
+            <form id="form">
+              <p><strong>Enter Full Address</strong></p>
+              <p id="address">(Street,City,State,Zip Code)</p>
+            <label for="site-search"></label>
+            <input type="text" id="site-search" name="q">
+                        <input type="submit"  id="button"></input>
+
+            </form>
           
           </div>
         <div class="box item4">Four</div>
         <div class="box item5">Five</div>
     </div>
+
+    <script defer src="celestial.js"></script>
+
 </body>
 </html>

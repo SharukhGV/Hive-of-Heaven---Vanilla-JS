@@ -57,11 +57,22 @@ return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${latitude.
 //     }
 // }
 // Object.values(data1.data[0]).aboveHorizon
+let planets = document.querySelector(".planetrender")
+planets.innerHTML = `<div class="insertPlanetINFO"><br>LOCATION</br>  <br> <h3> ${x}</h3> </br> <br>PLANETS VIEWABLE</br><div>`
 for (i=0;i<data1.data.length;i++){
+  
+document.querySelector
     let divPlanet = document.createElement("div")
     divPlanet.innerHTML =`<br>${data1.data[i].name}</br>`
     planetrender.append(divPlanet)
+
+
 }
+// if(data1.data[i].name.includes("mercury")){
+//    let mercury= document.createElement("br")
+//    mercury.setAttribute("class","mercury")
+//    let themercury = document.querySelector(".mercury")
+//    themercury.innerHTML=`<img src="mercury.png">`
 
 //      let divPlanet = document.createElement("div")
 //     divPlanet.innerHTML =  `<p>${data1[0].name}</p>

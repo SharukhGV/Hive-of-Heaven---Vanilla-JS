@@ -16,6 +16,8 @@ let googleMAPS = document.getElementById("map");
 var cherry = { lat: 41.66322605092642, lng: -77.82340454232315 };
 var sandDunes = { lat: 37.7940008252381, lng: -105.59327612114384 };
 var bigbend = { lat: 29.281262599614543, lng: -103.25034877571737 };
+var deathvalley = { lat: 36.50425989066362, lng: -117.0886691645624 }
+var centralidaho = { lat: 44.00006754980178, lng: -114.83385993107613 }
  //---------------------------------------->THIS ONE
 //**********************************************************************************************************
 
@@ -126,6 +128,16 @@ map = new google.maps.Map(googleMAPS, {
       position: sandDunes,
       map: map,
     });
+
+    const marker4 = new google.maps.Marker({
+      position: deathvalley,
+      map:map,
+    })
+
+    const marker5 = new google.maps.Marker({
+      position: centralidaho,
+      map:map,
+    })
 
 }
 //**********************************************************************************************************

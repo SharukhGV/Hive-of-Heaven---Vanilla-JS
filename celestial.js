@@ -58,7 +58,7 @@ return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${latitude.
 // }
 // Object.values(data1.data[0]).aboveHorizon
 let planets = document.querySelector(".planetrender")
-planets.innerHTML = `<div class="insertPlanetINFO"><br>LOCATION</br>  <br> <h3> ${x}</h3> </br> <br>PLANETS VIEWABLE</br><div>`
+planets.innerHTML = `<div class="insertPlanetINFO"><p>LOCATION</p>  <p> <h3> ${x}</h3> </p> <p>PLANETS VIEWABLE</p><div>`
     let plonets = document.querySelector(".planetclass")
     console.log(plonets)
 
@@ -67,25 +67,25 @@ for (i=0;i<data1.data.length;i++){
 
   console.log(data1.data[i].name)
   if(data1.data[i].name ==="Mercury"){
-    plonets.innerHTML += `<br><img src= "mercury.png"></br>`
+    plonets.innerHTML += `<img class="planetimages" src= "mercury.png">`
   }
   if(data1.data[i].name ==="Venus"){
-    plonets.innerHTML += `<br><img src= "venus.png"</br>`
+    plonets.innerHTML += `<img class="planetimages" src= "venus.png"`
   }
   if(data1.data[i].name ==="Mars"){
-    plonets.innerHTML += `<br><img src= "mars.png"></br>`
+    plonets.innerHTML += `<img class="planetimages" src= "mars.png">`
   }
   if(data1.data[i].name ==="Jupiter"){
-    plonets.innerHTML += `<br><img src= "jupiter.png"></br>`
+    plonets.innerHTML += `<img class="planetimages" src= "jupiter.png">`
   }
   if(data1.data[i].name ==="Saturn"){
-    plonets.innerHTML += `<br><img src= "saturn.png"></br>`
+    plonets.innerHTML += `<img class="planetimages" src= "saturn.png">`
   }
   if(data1.data[i].name ==="Uranus"){
-    plonets.innerHTML += `<br><img src= "uranus.png"></br>`
+    plonets.innerHTML += `<img class="planetimages" src= "uranus.png">`
   }
   if(data1.data[i].name ==="Neptune"){
-    plonets.innerHTML += `<br><img src= "neptune.png"></br>`
+    plonets.innerHTML += `<img class="planetimages" src= "neptune.png">`
   }
 // document.querySelector
 //     let divPlanet = document.createElement("div")

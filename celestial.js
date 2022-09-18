@@ -2,7 +2,10 @@
 
 
 let planetrender = document.querySelector("div.planetrender")
-
+    // let defaultsearchvalue = document.getElementById("site-search").defaultValue = "Insert Address";
+    let form = document.querySelector("#form")
+    let errordiv = document.createElement("div")
+    errordiv.innerText ="Error: Please Insert an Address"
 let coordinatesArrayLAT =[40]
 let coordinatesArrayLON =[-73]
 //DECLARING THE GOOGLE MAPS MAP VARIABLE
@@ -15,10 +18,11 @@ let coordinatesArrayLON =[-73]
 function celestialME(event){
 
   event.preventDefault()
-
+  
   // setTimeout(() => {
     //THE CODE BELOW WILL TAKE THE VALUE THAT IS IN THE TEXT FIELD IN THE SEARCH BAR AND SAVE IT TO VARIABLE X
     var x = document.getElementById("site-search").value;
+
     // THE CODE BELOW WILL CHANGE THE STRING VALUE FROM THE SEARCH AND CONVERT IT TO A STIRING THAT CAN BE READ BY THE LOCATION IQ API. IT REPLACES THE SPACES WITH %20 AND COMMAS WITH %2C. THIS CODE WILL BE INSERTED INTO CITYMAIN AS PART OF THE COMPLETE URL FOR FETCHING THE API
     var y = x.replaceAll(" ", "%20").replaceAll(",","%2C")
 //THE CODE BELOW IS THE API KEY
@@ -30,6 +34,11 @@ function celestialME(event){
   //THE CODE BELOW WILL COMBINE THE THREE STRINGS TO MAKE A COMPLETE URL FOR THE FETCH API FOR LOCATION-IQ API
   let cityMAIN = `${city1}${y}${city3}`
 //THE CODE BELOW WILL GET THE DATA FROM THE URL WHICH BASICALLY IS THE STREET ADDRESS CONVERTED INTO COORDINATES FOR A MAP (LATITUDE AND LONGITUDE)
+
+// if(x.value === null){
+//  alert("Please inset valid address. Address must be exact")
+// }
+
  const result =  fetch(`${cityMAIN}`)
   //THE CODE BELOW WILL TAKE THE JSON DATA AND CONVERT IT TO JAVASCRIPT FOR EASY ACCESS THEN TAKE THAT SAME DATA TO BE IMPLEMENTED IN VARIOUS WAYS
   .then((response) => response.json()).then((data) => {
@@ -53,15 +62,17 @@ return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${latitude.
 //             let mercury = document.createElement("div");
 //             mercury.innerHTML = "<p>Mercury</p>"
 //             planetrender.after(mercury)
-
 //     }
 // }
 // Object.values(data1.data[0]).aboveHorizon
 let planets = document.querySelector(".planetrender")
 planets.innerHTML = `<div class="insertPlanetINFO"><p>LOCATION</p>  <p> <h3> ${x}</h3> </p> <p>PLANETS VIEWABLE</p><div>`
     let plonets = document.querySelector(".planetclass")
-    console.log(plonets)
-
+    // console.log(plonets)
+// console.log(x)
+// if(x===undefined){
+//    window.alert("Please input a valid address. It must be exact as the USPS has it in file.")
+// }else{
     plonets.innerHTML=""
 for (i=0;i<data1.data.length;i++){
 
@@ -91,8 +102,10 @@ for (i=0;i<data1.data.length;i++){
 //     let divPlanet = document.createElement("div")
 //     divPlanet.innerHTML =`<br>${data1.data[i].name}</br>`
 //     planetrender.append(divPlanet)
-
+// }
     
+errordiv.innerText = ""
+form.after(errordiv)
 
 }
 
@@ -113,7 +126,7 @@ for (i=0;i<data1.data.length;i++){
   
   
   }).catch((error) => {
-    
+   
     console.log(error)
   }) 
 
@@ -121,8 +134,10 @@ for (i=0;i<data1.data.length;i++){
 })
 
 result.catch((error) => {
-      
-      console.log(error)
+  errordiv.innerText ="Error: Please Insert an Address"
+
+form.after(errordiv)
+
     }) 
 
   //  console.log(coordinatesArrayLAT[coordinatesArrayLAT.length-1].toFixed(0))

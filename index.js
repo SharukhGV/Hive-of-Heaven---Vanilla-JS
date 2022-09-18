@@ -1,6 +1,7 @@
 
 
-
+let form = document.querySelector("#form")
+let errordiv = document.createElement("div")
 
 let coordinatesArrayLAT =[40]
 let coordinatesArrayLON =[-73]
@@ -74,11 +75,14 @@ let homelocal = { lat: latitude, lng: longitude }
 //     console.log(error)
 //   }) 
 
-
+errordiv.innerText = ""
+form.after(errordiv)
 })
 
 result.catch((error) => {
-      
+  errordiv.innerText ="Error: Please Insert an Address"
+
+  form.after(errordiv)
       console.log(error)
     }) 
 

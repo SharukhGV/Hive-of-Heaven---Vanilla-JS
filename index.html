@@ -18,8 +18,35 @@
     /* The width is the width of the web page */
   }
   
+.heaventitle{
+  background-color: rgba(255, 0, 98, 0.097);
+}
 
-  
+.milkywayband img{
+
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+h3{
+
+  font-family: fantasy;
+}
+
+h4{
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+p{
+
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+  /* #skycontainer{
+
+    display:flex;
+    flex-direction: row;
+} */
   </style>
 
   </head>
@@ -49,7 +76,7 @@
 
 
 
-    <div class="div1"><!--The div element for the map -->
+    <div class="heaventitle"><!--The div element for the map -->
       <div id="map"></div>
  <h1> Hive of Heaven</h1>
  <h3>Dark Sky Preserve Map</h3>
@@ -58,7 +85,7 @@
        document has been parsed. For non-blocking uses, avoiding race conditions,
        and consistent behavior across browsers, consider loading using Promises
        with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-      --> </div>
+      --> 
     <div class="div2"> 
 
       </style>
@@ -73,16 +100,28 @@
 
       </form>
 
-    </div>
+    </div></div>
     <p style="padding:20px">Input Your Address to see where you are compared to some popular Dark Sky Preserves in the United States</p>
     </div>
     <div class="div3">
       <a href="https://en.wikipedia.org/wiki/Dark-sky_preserve">Here is an Excerpt from WIKIPEDIA</a>
 
       <h3><strong>WHAT IS A DARK SKY Preserve?</strong></h3>
-      <h4>FROM WIKIPEDIA:</h4>
-      <p>A dark-sky preserve (DSP) is an area, usually surrounding a park or observatory, that restricts artificial light pollution. The purpose of the dark-sky movement is generally to promote astronomy. However, astronomy is certainly not the only objective of conserving a dark sky. A dark night sky is associated with many facets of history, philosophy, religion, societal development, poetry, song, mathematics, and science.[2] Hence, dark sky preservation is necessary to understand our environmental history. Different terms have been used to describe the areas as national organizations have worked independently to create their programs. The International Dark-Sky Association (IDA) uses International Dark Sky Reserve (IDSR) and International Dark Sky Park (IDSP). A third designation, International Dark Sky Sanctuary, was introduced in 2015.</p>
-      
+      <p>A dark-sky preserve (DSP) is an area, usually surrounding a park or observatory, that restricts artificial light pollution. The purpose of the dark-sky movement is generally to promote astronomy. However, astronomy is certainly not the only objective of conserving a dark sky. A dark night sky is associated with many facets of history, philosophy, religion, societal development, poetry, song, mathematics, and science.[2] Hence, dark sky preservation is necessary to understand our environmental history. Different terms have been used to describe the areas as national organizations have worked independently to create their programs. The International Dark-Sky Association (IDA) uses International Dark Sky Reserve (IDSR) and International Dark Sky Park (IDSP). A third designation, International Dark Sky Sanctuary, was introduced in 2015. - WIKIPEDIA</p> 
+<div id="skycontainer">
+<div>
+      <a class="milkywayband" title="Kevin Wigell, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:CSSP_Sagittarius_Combine1C.jpg"><img width="512" alt="CSSP Sagittarius Combine1C" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/CSSP_Sagittarius_Combine1C.jpg/512px-CSSP_Sagittarius_Combine1C.jpg"></a>
+<p>Cherry Spring State Park, Pennsylvania, United States</p>
+      </div>
+
+
+      <div>
+        <a class="milkywayband" title="NPS/Patrick Myers, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park,_Colorado,_United_States.jpg"><img width="512" alt="Milky Way over dunes in Great Sand Dunes National Park, Colorado, United States" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park%2C_Colorado%2C_United_States.jpg/512px-Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park%2C_Colorado%2C_United_States.jpg"></a>
+  <p>Great Sand Dunes, Colorado, United States</p>
+        </div>
+
+
+      </div>
       <!-- <p>Planets</p>
       <p>Nebulae</p>
       <p>Galaxies</p>

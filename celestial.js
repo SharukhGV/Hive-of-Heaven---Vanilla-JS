@@ -52,7 +52,7 @@ function celestialME(event){
 
     event.preventDefault()
 
-return  fetch(`https://visible-planets-api.herokuapp.com/v2?latitude=${latitude.toFixed(0)}&longitude=${longitude.toFixed(0)}`)
+return  fetch(`https://api.visibleplanets.dev/v3?latitude=${latitude.toFixed(0)}&longitude=${longitude.toFixed(0)}`)
   .then((response) => response.json()).then((data1) => {
 //   console.log(data.data[0].name)
 //   console.log(data.data[0].aboveHorizon)
